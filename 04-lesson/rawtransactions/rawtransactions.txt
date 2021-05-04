@@ -1,0 +1,18 @@
+
+// createrawtransaction '[{"txid":"TXID","vout": VOUT}]’’{“to_address”:amount1, “from_address”:amount2}’
+
+Build commands
+
+txid: 6ab715c1e3e3a88d38f19a8c428fbfa624f23f2dd425b5f25cbe177c7e3cd7fd
+
+vout: 0
+
+to_address: 2N1GRh3UfDZXEZWqrnsKAvzLmefvridnGdZ
+
+from_address: 2N1Fra7rHmEeUq8G4iHcPYfTcWRh3sQHTGZ
+
+amount1: .030 BTC being sent to "to_address"
+
+amount2: 0.0195 BTC being sent back to the "from_address"
+
+createrawtransaction '[{"txid": "6ab715c1e3e3a88d38f19a8c428fbfa624f23f2dd425b5f25cbe177c7e3cd7fd", "vout":1}]' '{"2N1GRh3UfDZXEZWqrnsKAvzLmefvridnGdZ":0.00000009, "2N1Fra7rHmEeUq8G4iHcPYfTcWRh3sQHTGZ":0.00006999}'
