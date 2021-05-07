@@ -31,8 +31,7 @@
         if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
         } else {
-//            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-            web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/c14e10167d5e4c93a167dce350539596"));
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
         }
 
         // Set a default account
@@ -73,20 +72,20 @@
 		"stateMutability": "view",
 		"type": "function"
 	}
-], '0x7C5C3521ce8d9CF864d8a9e73fBD747f9Ac5e7Fa', {
-                    from: '0x22Ee361311587a1b1dffa38De216AD66eE866b53', // default from address
-                    gasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
-});
+], '0x06AA2dC145bfb7a08eC90D4d67145353ec6C7DF5');
 
         // Get the contract abi
         // var myMessage = RemixContract.at('0x06AA2dC145bfb7a08eC90D4d67145353ec6C7DF5');
 //        var myMessage = RemixContract.options.from = '0x06AA2dC145bfb7a08eC90D4d67145353ec6C7DF5';
+        var myMessage = RemixContract;
         console.log(RemixContract);
         $("#setMessageButton").click(function () {
-            RemixContract.methods.setMessage($("#userInput").val()).send();
-            console.log($("#userInput").val())
+                message = $("#userInput").val()
+      //          myMessage.methods.setMessage(message, (error, result) => {message = result});
+		myMessage.methods.setMessage(message).send({ from : web3.eth.defaultAccount });
+	     
+                console.log($("#userInput").val())
         });
-        window.ethereum.enable();
 
     </script>
 </body>
